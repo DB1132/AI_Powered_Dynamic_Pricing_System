@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f6fa;
+        }
+
+        header {
+            background: #2f3640;
+            color: white;
+            padding: 15px 30px;
+            font-size: 22px;
+        }
+
+        #products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #b2bec3;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        .discount {
+            color: #d63031;
+            font-size: 15px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>Customer Dashboard</header>
+
+<div id="products"></div>
+
+<script src="customer.js"></script>
+
+</body>
+</html>

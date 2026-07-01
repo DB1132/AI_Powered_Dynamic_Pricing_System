@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f6fa;
+        }
+
+        header {
+            background: #2f3640;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .actions button {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #0984e3;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0652DD;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .review {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .rating {
+            color: #f39c12;
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>Product Details</header>
+
+<div class="container">
+
+    <div class="top">
+        <div>
+            <h1 id="name"></h1>
+            <p>Price: ₹ <span id="price"></span></p>
+        </div>
+
+        <div class="actions">
+            <button onclick="optimize()">Optimize</button>
+            <button onclick="generateDescription()">AI Summary</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Optimization Result</h3>
+        <div id="result" class="result"></div>
+    </div>
+
+    <div class="section">
+        <h3>Price History</h3>
+        <canvas id="chart"></canvas>
+    </div>
+
+    <div class="section">
+        <h3>Revenue Curve</h3>
+        <canvas id="revenueChart"></canvas>
+    </div>
+
+    <div class="section">
+        <h3>Reviews</h3>
+        <div id="reviews"></div>
+    </div>
+
+    <div class="section">
+        <h3>AI Summary</h3>
+        <p id="description"></p>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="product.js"></script>
+
+</body>
+</html>
