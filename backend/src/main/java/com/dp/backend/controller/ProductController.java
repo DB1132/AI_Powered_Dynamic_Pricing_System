@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
     @Autowired
-    ProductRepository  productRepository;
+    ProductRepository productRepository;
 
     @GetMapping
     public List<Product> getProducts(){
@@ -25,7 +25,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable int id){
-        return productRepository.findById(id);
+    public Product getProductById(@PathVariable Long id){
+        return productRepository.findById(id).orElse(null);
     }
 }
