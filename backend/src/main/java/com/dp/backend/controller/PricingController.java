@@ -24,48 +24,11 @@ public class PricingController {
     PriceHistoryRepository historyRepository;
 
     @Autowired
-    ProductRepository  productRepository;
-
-    @Autowired
-    PriceHistory h;
+    PricingService pricingService;
 
     @PostMapping("/optimize/{id}")
     public Map<String,Object> optimize(@PathVariable Long id) {
-        Product p = productRepository.findById(id).orElseThrow();
-
-        RestTemplate rest = new RestTemplate();
-
-        Map<String,Object> req = new HashMap<>();
-        req.put("Price", p.getCurrentPrice());
-        req.put("Discount", p.getDiscount());
-        req.put("Inventory Level", p.getInventoryLevel());
-        req.put("Competitor Pricing", p.getCompetitorPrice());
-        req.put("Category", p.getCategory());
-        req.put("Region", p.getRegion());
-        req.put("Promotion", p.isPromotion() ? 1 : 0);
-        req.put("Epidemic", p.isEpidemic() ? 1 : 0);
-
-        ResponseEntity<Map> response = rest.postForEntity(
-                "http://localhost:5000/optimize-price",
-                req,
-                Map.class
-        );
-
-        Map result = response.getBody();
-
-        h.setProductId(p.getId());
-
-        h.setOldPrice(p.getCurrentPrice());
-        h.setNewPrice(((Number) result.get("optimal_price")).doubleValue());
-        h.setPredictedDemand(((Number) result.get("expected_demand")).doubleValue());
-
-        h.setExpectedRevenue(((Number) result.get("expected_revenue")).doubleValue());
-
-        h.setUpdatedAt(LocalDateTime.now());
-
-        historyRepository.save(h);
-
-        return response.getBody();
+        return pricingService.optimizeProduct(id);
     }
 
     @GetMapping("/history/{productId}")
