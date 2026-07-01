@@ -1,4 +1,7 @@
 package com.dp.backend.repository;
 
-public class ProductRepository {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ProductRepository extends {
 }
