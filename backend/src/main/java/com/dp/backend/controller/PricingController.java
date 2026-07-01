@@ -12,14 +12,13 @@ import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/pricing")
 public class PricingController {
-    @Autowired
-    PricingService pricingService;
 
     @Autowired
     PriceHistoryRepository historyRepository;
