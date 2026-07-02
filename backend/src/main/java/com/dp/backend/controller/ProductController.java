@@ -28,4 +28,14 @@ public class ProductController {
     public Product getProductById(@PathVariable Long id){
         return productRepository.findById(id).orElse(null);
     }
+
+    @PostMapping("/{id}/buy")
+    public Product buyProduct(@PathVariable Long id) {
+        Product product = productRepository.findById(id).orElseThrow();
+        if (product.getInventoryLevel() > 0) {
+            product.setInventoryLevel(product.getInventoryLevel() - 1);
+            productRepository.save(product);
+        }
+        return product;
+    }
 }
