@@ -154,7 +154,7 @@ labels: prices,
 datasets: [
 {
 label: "Revenue",
-data: revenues,
+data: prices.map((p, i) => ({ x: p, y: revenues[i] })),
 borderColor: "green",
 backgroundColor: "lightgreen",
 borderWidth: 2,
