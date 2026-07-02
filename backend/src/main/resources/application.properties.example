@@ -1,0 +1,13 @@
+spring.application.name=backend
+
+server.port=8081
+spring.datasource.url=jdbc:mysql://localhost:3306/ecom
+spring.datasource.username=root
+spring.datasource.password=
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# Place your actual Gemini API key in application.properties (which is ignored by Git)
+# or set it as a GEMINI_API_KEY environment variable.
+gemini.api.key=${GEMINI_API_KEY:YOUR_API_KEY_HERE}

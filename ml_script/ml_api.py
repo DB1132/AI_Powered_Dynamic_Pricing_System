@@ -3,10 +3,12 @@ import joblib
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from pathlib import Path
 
 app = Flask(__name__)
 
-model = joblib.load("demand_model.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+model = joblib.load(BASE_DIR / "demand_model.pkl")
 
 feature_cols = [
     'Price',
