@@ -44,8 +44,10 @@ public class PricingService {
         double optimalPrice = ((Number) result.get("optimal_price")).doubleValue();
         double demand = ((Number) result.get("expected_demand")).doubleValue();
         double revenue = ((Number) result.get("expected_revenue")).doubleValue();
+
         product.setCurrentPrice(optimalPrice);
         productRepository.save(product);
+
         PriceHistory history = new PriceHistory();
 
         history.setProductId(productId);
