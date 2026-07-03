@@ -53,7 +53,7 @@ export default function App() {
       <aside className="sidebar">
         <div className="sidebar-brand">
           <TrendingUp size={24} />
-          <span>Antigravity Price AI</span>
+          <span>ML based Dynamic Price </span>
         </div>
         <nav>
           <ul className="sidebar-menu">
