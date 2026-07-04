@@ -1,4 +1,4 @@
-# AI-Powered Dynamic Pricing & Revenue Optimization System
+# ML-Powered Dynamic Pricing & Revenue Optimization System
 
 An enterprise-grade full-stack application that combines **Predictive Machine Learning** for demand forecasting and **Generative AI** for customer feedback analysis to dynamically optimize product pricing and maximize total business revenue.
 
