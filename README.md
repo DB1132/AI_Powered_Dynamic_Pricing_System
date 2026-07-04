@@ -124,7 +124,7 @@ An enterprise-grade full-stack application that combines **Predictive Machine Le
 
 # 👨‍💻 Author
 
-**Deep Baldha**
+**Dip Baldha**
 
 GitHub: https://github.com/DB1132
 
