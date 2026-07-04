@@ -119,3 +119,19 @@ An enterprise-grade full-stack application that combines **Predictive Machine Le
 3. **Revenue Optimization:** The system maps the revenue curve:
    $$\text{Revenue} = \text{Price} \times \text{Demand}$$
    It then selects and suggests the price point at the peak of the curve to the seller.
+
+   ---
+
+# 👨‍💻 Author
+
+**Deep Baldha**
+
+GitHub: https://github.com/DB1132
+
+LinkedIn: https://www.linkedin.com/in/dip-baldha-492596288/
+
+---
+
+# ⭐ If you like this project
+
+Give this repository a ⭐ on GitHub if you found it useful.
